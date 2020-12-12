@@ -1,0 +1,39 @@
+// Xiana Lara
+// oct 26 2020
+// Determine if JavaScript implements Shallow, Deep, of Ad Hoc Binding.
+// output:  For shallow binding the output of the program is 4, for deep binding, 
+// the output is 1 and for ad hoc binding, the output is 3.
+// code is from Concepts of Programming Languages, 11/E, Robert W. Sebesta
+
+<!DOCTYPE html>
+<html>
+    <script type = "text/javascript">
+        
+        sub1();
+        
+        function sub1() {
+            var x;
+            
+            function sub2() {
+                // Creates a dialog box with the value of x
+                alert(x); 
+            };
+    
+            function sub3() {
+                var x;
+                x = 3;
+                sub4(sub2);
+            };
+ 
+            function sub4(subx) {
+                var x;
+                x = 4;
+                subx();
+            };
+    
+            x = 1;
+            sub3();
+        };
+        
+    </script>
+</html>
